@@ -1,0 +1,141 @@
+:root {
+  --dark-cyan-clr: hsl(158, 36%, 37%);
+  --hover-clr: hsl(158, 36%, 20%);
+  --cream-clr: hsl(30, 38%, 92%);
+  --very-dark-blue-clr: hsl(212, 21%, 14%);
+  --dark-grayish-blue-clr: hsl(228, 12%, 48%);
+  --white-clr: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--cream-clr);
+  font-family: "Montserrat", sans-serif;
+  color: var(--dark-grayish-blue-clr);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+main {
+  min-height: 100vh;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.product-card {
+  max-width: 570px;
+  background-color: var(--white-clr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+}
+
+.product-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.product-card__category {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product-card__title {
+  font-family: "Fraunces", serif;
+  color: var(--very-dark-blue-clr);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.product-card__description {
+  line-height: 1.6;
+}
+
+.product-card__prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-card__actual-price {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--dark-cyan-clr);
+}
+
+.product-card__old-price {
+  text-decoration: line-through;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--dark-cyan-clr);
+  color: var(--white-clr);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: background-color 0.3s;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: var(--hover-clr);
+}
+
+@media screen and (min-width: 640px) {
+  .product-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
